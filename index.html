@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="origin-trial" content="YOUR_ORIGIN_TRIAL_TOKEN">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="header">
+                <img class="icon" src="./images/icon.png" alt="icon">
+                <span class="title">Regions
+                    <span class="mortgage">Mortgage</span>
+                </span>
+            </div>
+            <div class="enroll-container">
+                <span class="enroll-text">Are you a new customer?</span>
+                <div class="enroll">
+                    <button id="enrollBtn">Enroll Now</button>
+                    <div class="dropdown">
+                        Enroll me to
+                    <a href="#"> <span class="checkmark"> </span>Access your loan online</a>
+                    <a href="#"> <span class="checkmark"> </span>Pay your remaning online</a>
+                    <a href="#"> <span class="checkmark"> </span>View your Mortgage account</a>
+                    </div>
+                </div>
+            </div>
+            <div class="login-form">
+                <h2 class="welcome">Welcome Back</h2>
+                <h3 class="sign">Sign in to your Regions Mortgage account</h3>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <input type="text" id="onlineId" required placeholder=" ">
+                        <label for="onlineId">Online ID</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="password" required placeholder=" ">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember Me</label>
+                    </div>
+                    <button class="loginButton" id="login-button" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+        <div class="right-side">
+            <img src="./images/house1.jpg" alt="Beautiful House">
+        </div>
+    </div>
+    
+    <div class="fullscreen-image" id="fullscreen-image">
+        <img src="./images/house1.jpg" alt="Fullscreen Image">
+        <div id="center-icon" class="center-icon">
+            <img width="200px" src="./images/icon.png" alt="Center Icon">
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

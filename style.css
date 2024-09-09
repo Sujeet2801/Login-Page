@@ -1,0 +1,532 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-side, .right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.left-side {
+    /* background-color: #f0f0f0; */
+    padding: 20px;
+}
+
+.header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: flex-start;
+    
+}
+
+.icon {
+    height: 40px;
+    flex-direction: column;
+}
+
+.title {
+    right: 10px;
+    top: 120px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    left: 150px;
+    transition: opacity 0.5s ease-in-out, margin-top 0.5s ease-in-out; 
+}
+
+.welcome {
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+
+.sign {
+    margin-bottom: 50px;
+    font-size: 16px;
+    top: 5px;
+    color: rgba(33, 10, 10, 0.5);
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-form h2 {
+    margin-bottom: -10px;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.input-group input::placeholder {
+    color: #aaa;
+    opacity: 1; /* Show the placeholder text */
+    transition: opacity 0.3s ease;
+}
+
+.input-group input:focus::placeholder {
+    opacity: 0; /* Hide the placeholder text on focus */
+}
+
+.input-group input:focus {
+    border-color: green;
+}
+
+.input-group label {
+    position: absolute;
+    top: 60%;
+    left: 10px;
+    transform: translateY(-50%);
+    background-color: #f0f0f0;
+    padding: 0 5px;
+    color: #aaa;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: green;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    /* color: green; */
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+    background-color: green    ;
+}
+
+.loginButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d4e1ee;
+    color: white;
+    cursor: pointer;
+    transition: width 2s ease-in-out;
+    width: 418px;
+    background-color: #16c55f;
+    
+}
+
+.loginButton:hover {
+    background-color: green;
+}
+
+.enroll-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.enroll-text {
+    margin-right: 10px;
+    color: rgba(16, 10, 6, 0.7);
+}
+
+#enrollBtn {
+    color: green;
+    border-radius: 25px;
+    padding: 10px 10px;
+    border-color: green;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: white;
+    background-color: rgb(33, 8, 8);
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.enroll:hover .dropdown {
+    display: block;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: rgba(248, 241, 236, 0.8);
+}
+
+.checkmark {
+    color: green;
+    font-size: 16px;
+}
+
+.right-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: all 2s ease-in;
+}
+
+.fullscreen-image {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Optional: semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it is above other content */
+    opacity: 0; /* Start with the image fully transparent */
+}
+
+.fullscreen-image.show {
+    display: flex; /* Show the fullscreen image */
+    animation: fadeIn 3s forwards; /* Apply fade-in animation */
+}
+
+.fullscreen-image.hide {
+    animation: fadeOut 5s backwards; /* Apply fade-out animation */
+}
+
+.center-icon {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* Ensure it is above the fullscreen image */
+}/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-side, .right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.left-side {
+    /* background-color: #f0f0f0; */
+    padding: 20px;
+}
+
+.header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: flex-start;
+    
+}
+
+.icon {
+    height: 40px;
+    flex-direction: column;
+}
+
+.title {
+    right: 10px;
+    top: 120px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    left: 150px;
+    transition: opacity 0.5s ease-in-out, margin-top 0.5s ease-in-out; 
+}
+
+.welcome {
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+
+.sign {
+    margin-bottom: 50px;
+    font-size: 16px;
+    top: 5px;
+    color: rgba(33, 10, 10, 0.5);
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-form h2 {
+    margin-bottom: -10px;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.input-group input::placeholder {
+    color: #aaa;
+    opacity: 1; /* Show the placeholder text */
+    transition: opacity 0.3s ease;
+}
+
+.input-group input:focus::placeholder {
+    opacity: 0; /* Hide the placeholder text on focus */
+}
+
+.input-group input:focus {
+    border-color: green;
+}
+
+.input-group label {
+    position: absolute;
+    top: 60%;
+    left: 10px;
+    transform: translateY(-50%);
+    background-color: #f0f0f0;
+    padding: 0 5px;
+    color: #aaa;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: green;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    /* color: green; */
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+    background-color: green;
+}
+
+.loginButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d4e1ee;
+    color: white;
+    cursor: pointer;
+    transition: width 2s ease-in-out;
+    width: 418px;
+    background-color: #16c55f;
+}
+
+.loginButton:hover {
+    background-color: green;
+}
+
+.enroll-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.enroll-text {
+    margin-right: 10px;
+    color: rgba(16, 10, 6, 0.7);
+}
+
+#enrollBtn {
+    color: green;
+    border-radius: 25px;
+    padding: 10px 10px;
+    border-color: green;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: white;
+    background-color: rgb(33, 8, 8);
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.enroll:hover .dropdown {
+    display: block;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: rgba(248, 241, 236, 0.8);
+}
+
+.checkmark {
+    color: green;
+    font-size: 16px;
+}
+
+.right-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: all 2s ease-in;
+}
+
+.fullscreen-image {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Optional: semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 0.3; /* Ensure it is above other content */
+    opacity: 0; /* Start with the image fully transparent */
+    transition: opacity 3s forwards; /* Smooth transition */
+}
+
+.fullscreen-image.show {
+    display: flex; /* Show the fullscreen image */
+    opacity: 1; /* Fully opaque */
+    object-fit: cover;
+}
+
+.fullscreen-image.hide {
+    opacity: 0; /* Fully transparent */
+}
+
+.center-icon {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* Ensure it is above the fullscreen image */
+    transition: opacity 3s forwards; /* Smooth transition */
+}
+
+.center-icon.show {
+    display: block; /* Show the center icon */
+    opacity: 1; /* Fully opaque */
+}
+
+.center-icon.hide {
+    opacity: 0; /* Fully transparent */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.center-icon.show {
+    display: block; /* Show the center icon */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
